@@ -1,2 +1,2 @@
-# xnavai_project
+# Resurgent Beacons
 
