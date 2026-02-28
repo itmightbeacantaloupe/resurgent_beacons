@@ -9,4 +9,4 @@ Requirements: Python 3.x
 numpy, sckit-learn libraries installed 
 Running the Prototype Configure parameters in config.py if needed. 
 From the project root directory, run main.py 
-The console will display: Mean Non-AI Error , Mean AI Error , Percentage Error Reduction , Number of training samples , Feature dimension
+The console will display: Mean True TOA , Mean Classical TOA , Mean AI TOA , Mean Non-AI Error , Mean AI Error , Percentage Error Reduction , Number of training samples , Feature dimension
