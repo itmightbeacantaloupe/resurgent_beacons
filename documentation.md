@@ -74,6 +74,9 @@ Requirements:
 Configure parameters in config.py if needed.
 From the project root directory, run main.py
 The console will display:
+	Mean True TOA
+	Mean Classical TOA
+	Mean AI TOA
 	Mean Non-AI Error
 	Mean AI Error
 	Percentage Error Reduction
@@ -84,5 +87,6 @@ The console will display:
 Gaussian noise assumption
 Single-pulse window analysis
 Simulation-based validation only
+
 
 
