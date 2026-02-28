@@ -14,6 +14,10 @@ X_train = []
 y_train = []
 np.random.seed(Seed)
 
+true_toas = []
+ai_toas = []
+classical_toas = []
+
 # training AI with Features through simulation data for each monte carlo run for each pulsar
 for pulsar in pulsars:
     for i in range(MC_runs):
@@ -22,6 +26,8 @@ for pulsar in pulsars:
 
         X_train.append(features)
         y_train.append(true_toa)
+
+
 
 X_train = np.array(X_train)
 y_train = np.array(y_train)
@@ -38,14 +44,26 @@ for pulsar in pulsars:
         features = extract_peak_window(observed)
         ai_toa = model.predict(features.reshape(1, -1))[0]
 
+        true_toas.append(true_toa)
+        classical_toas.append(classical_toa)
+        ai_toas.append(ai_toa)
+
         nonai_errors.append(abs(classical_toa - true_toa))
         ai_errors.append(abs(ai_toa - true_toa))
 
 mean_nonai = np.mean(nonai_errors)
 mean_ai = np.mean(ai_errors)
+
+#toa values
+print("Average True TOA:", np.mean(true_toas))
+print("Average Classical TOA:", np.mean(classical_toas))
+print("Average AI TOA:", np.mean(ai_toas))
+#error values
 print("Mean Non-AI Error:", mean_nonai)
 print("Mean AI Error:", mean_ai)
 print("Error Reduction (%):", round(100*(mean_nonai-mean_ai) / mean_nonai, 2))
 
 print("Samples used for training:", X_train.shape[0])
 print("Feature dimension:", X_train.shape[1])
+
+
