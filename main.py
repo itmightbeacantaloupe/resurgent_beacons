@@ -55,9 +55,9 @@ mean_nonai = np.mean(nonai_errors)
 mean_ai = np.mean(ai_errors)
 
 #toa values
-print("Average True TOA:", np.mean(true_toas))
-print("Average Classical TOA:", np.mean(classical_toas))
-print("Average AI TOA:", np.mean(ai_toas))
+print("Mean True TOA:", np.mean(true_toas))
+print("Mean Classical TOA:", np.mean(classical_toas))
+print("Mean AI TOA:", np.mean(ai_toas))
 #error values
 print("Mean Non-AI Error:", mean_nonai)
 print("Mean AI Error:", mean_ai)
@@ -65,5 +65,6 @@ print("Error Reduction (%):", round(100*(mean_nonai-mean_ai) / mean_nonai, 2))
 
 print("Samples used for training:", X_train.shape[0])
 print("Feature dimension:", X_train.shape[1])
+
 
 
